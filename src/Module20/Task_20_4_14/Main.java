@@ -35,9 +35,52 @@ public class Main {
         System.out.println("Since now you have your own cat! How will you name it?");
         Cat cat = new Cat(scan.next());
 
-        String input = scan.next();
-        while (!Objects.equals(input, "S")) {
+        String input = "input";
+        int getStatusCounter = 0;
+        while (!Objects.equals(input, "q")) {
+            if (cat.getCatAge() >= 20) {
+                System.out.println("Your " + cat.getCatName() + " becomes 20 years old and dies. I'm sorry.");
+                System.exit(0);
+            }
+            if (cat.getCatHunger() < 0) {
+                System.out.println("You didn't feed your " + cat.getCatName() + ", so them die because of hunger. You're not a careful pet owner.");
+                System.exit(0);
+            }
 
+            System.out.println("Here is what you can do with your cat:");
+            System.out.println("1. Type \"status\" to get an information about your cat.");
+            System.out.println("2. Type \"feed\" in order to give your cat some food.");
+            System.out.println("3. Type \"play\" if you want to play with your cat.");
+            System.out.println("4. Type \"q\" if you want to exit the program.");
+
+            input = scan.next();
+            switch (input) {
+                case "status":
+                    getStatusCounter += 1;
+                    if (getStatusCounter >= 10) {
+                        cat.changeCatAge((byte) 1);
+                        getStatusCounter = 0;
+                    }
+                    cat.getCatState();
+                    cat.changeCatWeight((short) -100);
+                    cat.changeCatHunger((byte) -10);
+                    cat.changeCatWishesToPlay((byte) -10);
+                    break;
+                case "feed":
+                    System.out.println("You may feed " + cat.getCatName() + " with milk, sausage or whiskas. Choose any of them.");
+                    String food = scan.next();
+                    cat.catFeed(food);
+                    break;
+                case "play":
+                    cat.catPlay();
+                    break;
+                case "q":
+                    System.out.println("Goodbye!");
+                    break;
+                default:
+                    System.out.println("I don't understand what you want. Type 1 of 3 appropriate commands.");
+                    break;
+            }
         }
     }
 }
