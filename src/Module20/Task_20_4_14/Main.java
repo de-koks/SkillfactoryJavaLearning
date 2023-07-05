@@ -39,11 +39,11 @@ public class Main {
         int getStatusCounter = 0;
         while (!Objects.equals(input, "q")) {
             if (cat.getCatAge() >= 20) {
-                System.out.println("Your " + cat.getCatName() + " becomes 20 years old and dies. I'm sorry.");
+                System.out.printf("Your %s becomes 20 years old and dies. I'm sorry.\n", cat.getCatName());
                 System.exit(0);
             }
             if (cat.getCatHunger() < 0) {
-                System.out.println("You didn't feed your " + cat.getCatName() + ", so them die because of hunger. You're not a careful pet owner.");
+                System.out.printf("You didn't feed your %s, so them die because of hunger. You're not a careful pet owner.\n", cat.getCatName());
                 System.exit(0);
             }
 
@@ -67,7 +67,7 @@ public class Main {
                     cat.changeCatWishesToPlay((byte) -10);
                     break;
                 case "feed":
-                    System.out.println("You may feed " + cat.getCatName() + " with milk, sausage or whiskas. Choose any of them.");
+                    System.out.printf("You may feed %s with milk, sausage or whiskas. Choose any of them.\n", cat.getCatName());
                     String food = scan.next();
                     cat.catFeed(food);
                     break;
