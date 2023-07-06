@@ -10,8 +10,8 @@ import java.util.Random;
  */
 public class Task3 {
     public static void main(String[] args) {
-        Random rand = new Random();
-        int i, j;
+//        Random rand = new Random();
+//        int i, j;
         String[] result = new String[5];
 //        int[][] points = new int[5][5];
 //        for (int k = 0; k < 5; k++) {
@@ -28,8 +28,8 @@ public class Task3 {
         };
         int[] sumPoints = new int[5];
         String[] names = {"Alex", "Igor", "Michael", "Nicolay", "Vladimir"};
-        for (i = 0; i < names.length; i++) {
-            for (j = 0; j < points[i].length; j++) {
+        for (int i = 0; i < names.length; i++) {
+            for (int j = 0; j < points[i].length; j++) {
                 sumPoints[i] += points[i][j];
             }
             result[i] = names[i] + " " + sumPoints[i];
