@@ -6,7 +6,7 @@ public class Main {
 Extend Human class by Player class with inner Backpack
 */
         Player player = new Player("Tourist");
-        Player.Backpack bp = player.new Backpack();
+        Player.Backpack bp = player.getBackpack();
         System.out.println(bp);
         player.take("rope");
         System.out.println(bp);
