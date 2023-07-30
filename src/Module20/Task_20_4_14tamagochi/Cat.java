@@ -1,6 +1,4 @@
-package Module20.Task_20_4_14;
-
-import java.util.Scanner;
+package Module20.Task_20_4_14tamagochi;
 
 public class Cat {
     private short catWeight;

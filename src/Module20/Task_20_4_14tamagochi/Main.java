@@ -1,4 +1,4 @@
-package Module20.Task_20_4_14;
+package Module20.Task_20_4_14tamagochi;
 
 import java.util.Objects;
 import java.util.Scanner;
